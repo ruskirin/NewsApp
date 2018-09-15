@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+    <string name="to_weblink">continue…</string>
+    <string name="noarticles">Hmm… Looks like there are no articles to display.\n
+        Swipe down to refresh the screen and try again.</string>
+    <string name="error400">Uh oh…\nSomething went wrong…\n
+        Please try again later</string>
+    <string name="error500">Server error, please try again later. </string>
+    <string name="server_response_error">An error has occurred, swipe down to reload.\n
+        Otherwise try again later.</string>
+    <string name="network_error">No internet connection</string>
+</resources>
