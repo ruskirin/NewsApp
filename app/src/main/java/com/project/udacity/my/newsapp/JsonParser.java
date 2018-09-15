@@ -13,8 +13,8 @@ public class JsonParser {
     public static void guardianParser(String jsonResponse, List<Article> articles) {
 
         try {
-            JSONObject obj = new JSONObject(jsonResponse);
-            JSONObject jresponse = obj.getJSONObject("response");
+            JSONObject jobject = new JSONObject(jsonResponse);
+            JSONObject jresponse = jobject.getJSONObject("response");
             JSONArray jresults = jresponse.getJSONArray("results");
             int numResults = jresponse.getInt("pageSize");
 
@@ -24,18 +24,18 @@ public class JsonParser {
                 JSONArray jtags = jarticle.getJSONArray("tags");
                 JSONObject jauthor;
 
-                Article a = new Article();
-                a.setWebUrl(jarticle.getString("webUrl"));
-                a.setSection(jarticle.getString("sectionName"));
-                a.setTitle(jarticle.getString("webTitle"));
-                a.setDate(jarticle.getString("webPublicationDate"));
+                Article articleObj = new Article();
+                articleObj.setWebUrl(jarticle.getString("webUrl"));
+                articleObj.setSection(jarticle.getString("sectionName"));
+                articleObj.setTitle(jarticle.getString("webTitle"));
+                articleObj.setDate(jarticle.getString("webPublicationDate"));
                 if(!jtags.isNull(0)) {
                     jauthor = jtags.getJSONObject(0);
-                    a.setAuthor(jauthor.getString("webTitle"));
+                    articleObj.setAuthor(jauthor.getString("webTitle"));
                 }
-                a.setBody(jfields.getString("body"));
+                articleObj.setBody(jfields.getString("body"));
 
-                articles.add(a);
+                articles.add(articleObj);
             }
         } catch(JSONException e) {
             e.printStackTrace();

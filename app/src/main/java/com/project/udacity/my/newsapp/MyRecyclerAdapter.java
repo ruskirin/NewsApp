@@ -108,6 +108,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
 
     public void addList(List<Article> articles) {
         this.articles = articles;
+        notifyDataSetChanged();
     }
 
     public void clear() {

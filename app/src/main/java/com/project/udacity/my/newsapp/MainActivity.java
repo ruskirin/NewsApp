@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final int LOADER_ONE = 1;
+
         noDataView = findViewById(R.id.main_text_nodata);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements
 
         LoaderManager loaderManager = getSupportLoaderManager();
         if(isNetworkAvailable()) {
-            loaderManager.initLoader(0, null, this);
+            loaderManager.initLoader(LOADER_ONE, null, this);
 
         } else {
             noDataView.setVisibility(View.VISIBLE);
