@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Headers go here-->
+    <string name="drawer_settings">Settings</string>
+    <string name="drawer_menu_option1">Option One</string>
+    <string name="drawer_menu_option2">Option Two</string>
+    <string name="drawer_menu_option3">Option Three</string>
+    <string name="drawer_settings_section">Section</string>
+    <string name="drawer_settings_date">Date</string>
+    <string name="drawer_settings_author">Author</string>
+    <string name="drawer_settings_section_choice_def"></string>
+
+    <!--Detailed text goes here-->
+    <string-array name="drawer_settings_section_alltitles">
+        <item>@string/drawer_settings_section_alltitles_politics</item>
+        <item>@string/drawer_settings_section_alltitles_sports</item>
+        <item>@string/drawer_settings_section_alltitles_tech</item>
+        <item>@string/drawer_settings_section_alltitles_business</item>
+        <item>@string/drawer_settings_section_alltitles_sci</item>
+    </string-array>
+
+    <string name="drawer_settings_section_alltitles_politics">Politics</string>
+    <string name="drawer_settings_section_alltitles_sports">Sport</string>
+    <string name="drawer_settings_section_alltitles_tech">Technology</string>
+    <string name="drawer_settings_section_alltitles_business">Business</string>
+    <string name="drawer_settings_section_alltitles_sci">Science</string>
+
+
+</resources>

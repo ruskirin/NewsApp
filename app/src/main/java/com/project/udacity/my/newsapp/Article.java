@@ -52,8 +52,14 @@ public class Article {
     }
 
     public void setBody(String body) {
-        //Get a glimpse of the story, which can be read in full from the web
-        this.body = body.substring(0, 499) + "...";
+        //Display a portion of the article body
+        if(body.length() == 0)
+            this.body = "";
+        else if(body.length() < 500)
+            this.body = body.substring(0, body.length() - 1);
+        else
+            this.body = body.substring(0, 499);
+
     }
 
     public String getBody() {
@@ -61,6 +67,7 @@ public class Article {
     }
 
     public void setDate(String date) {
+        //Remove the time portion of the JSON response
         date = date.substring(0, date.indexOf('T'));
         this.date = date.replace('-', '\n');
     }

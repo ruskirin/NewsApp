@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="guardian_tech">https://content.guardianapis.com/technology?&amp;show-tags=contributor&amp;show-fields=body&amp;page-size=15&amp;api-key=69ed075d-c75c-4a27-a955-59dd78da5af0</string>
+    
+    <!--Query parameter items-->
+    <string name="guardian_query_item_fromdate">from-date</string>
+    <string name="guardian_query_item_todate">to-date</string>
+    <string name="guardian_query_item_orderby">order-by</string>
+    <string name="guardian_query_item_orderby_old">oldest</string>
+    <string name="guardian_query_item_tags">show-tags</string>
+    <string name="guardian_query_item_tags_author">contributor</string>
+    <string name="guardian_query_item_fields">show-fields</string>
+    <string name="guardian_query_item_fields_body">body</string>
+    <string name="guardian_query_item_pages">page-size</string>
+    <string name="guardian_query_item_pages_15">15</string>
+    <string name="guardian_query_item_key">api-key</string>
+    <string name="guardian_query_item_key_my">69ed075d-c75c-4a27-a955-59dd78da5af0</string>
+    
+</resources>

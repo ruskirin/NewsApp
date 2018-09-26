@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="settings_day_def">1</integer>
+    <integer name="settings_day_from">1</integer>
+    <integer name="settings_day_to_feb">28</integer>
+    <integer name="settings_day_to_less">30</integer>
+    <integer name="settings_day_to_more">31</integer>
+    <integer name="settings_month_from">1</integer>
+    <integer name="settings_month_to">12</integer>
+    <integer name="settings_year_from">2000</integer>
+
+</resources>

@@ -5,33 +5,31 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.MyViewHolder> {
+public class ArticleRecyclerAdapter extends RecyclerView.Adapter<ArticleRecyclerAdapter.MyViewHolder> {
 
-    private List<Article> articles = new ArrayList<>();
+    private List<Article> articles;
 
-    public MyRecyclerAdapter(List<Article> articles) {
+    public ArticleRecyclerAdapter(List<Article> articles) {
         this.articles = articles;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView title,
-                date,
-                author,
-                body,
-                link;
+                         date,
+                         author,
+                         body,
+                         link;
 
         private LinearLayout headline,
-                expandView;
+                             expandView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -66,6 +64,9 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
 
         myViewHolder.title.setText(article.getTitle());
         myViewHolder.date.setText(article.getDate());
+        myViewHolder.author.setText(null);
+        myViewHolder.link.setText(null);
+        myViewHolder.body.setText(null);
 
         if (article.isExpanded()) {
             myViewHolder.author.setText(article.getAuthor());
@@ -73,11 +74,10 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
 
             //Received html formatted text, following formats it into regular form
             //Conditional required for different SDK versions
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
                 myViewHolder.body.setText(Html.fromHtml(article.getBody(), Html.FROM_HTML_MODE_LEGACY));
-            } else {
+            else
                 myViewHolder.body.setText(Html.fromHtml(article.getBody()));
-            }
         }
 
         myViewHolder.headline.setOnClickListener(new View.OnClickListener() {

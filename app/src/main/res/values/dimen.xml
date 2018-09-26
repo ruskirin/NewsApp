@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="standard">8dp</dimen>
+    <dimen name="standard_padding">8dp</dimen>
+    <dimen name="large_padding">16dp</dimen>
+    <dimen name="margin_sectionpicker">32dp</dimen>
+    <dimen name="drawer_layout_top">16dp</dimen>
+    <dimen name="setting_title_textsize">16sp</dimen>
+    <dimen name="numberpicker_height">100dp</dimen>
+    <dimen name="setting_option_textsize">15sp</dimen>
+    <dimen name="setting_title_padding">8dp</dimen>
+    <dimen name="drawer_separator">2dp</dimen>
 
 </resources>

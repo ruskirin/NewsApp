@@ -15,13 +15,13 @@ public class JsonParser {
         try {
             JSONObject jobject = new JSONObject(jsonResponse);
             JSONObject jresponse = jobject.getJSONObject("response");
-            JSONArray jresults = jresponse.getJSONArray("results");
+            JSONArray jarticleArray = jresponse.getJSONArray("results");
             int numResults = jresponse.getInt("pageSize");
 
             for(int i = 0; i < numResults; i++) {
-                JSONObject jarticle = jresults.getJSONObject(i);
-                JSONObject jfields = jarticle.getJSONObject("fields");
-                JSONArray jtags = jarticle.getJSONArray("tags");
+                JSONObject jarticle = jarticleArray.getJSONObject(i);
+                JSONObject jbodyContainer = jarticle.getJSONObject("fields");
+                JSONArray jauthorContainer = jarticle.getJSONArray("tags");
                 JSONObject jauthor;
 
                 Article articleObj = new Article();
@@ -29,11 +29,11 @@ public class JsonParser {
                 articleObj.setSection(jarticle.getString("sectionName"));
                 articleObj.setTitle(jarticle.getString("webTitle"));
                 articleObj.setDate(jarticle.getString("webPublicationDate"));
-                if(!jtags.isNull(0)) {
-                    jauthor = jtags.getJSONObject(0);
+                if(!jauthorContainer.isNull(0)) {
+                    jauthor = jauthorContainer.getJSONObject(0);
                     articleObj.setAuthor(jauthor.getString("webTitle"));
                 }
-                articleObj.setBody(jfields.getString("body"));
+                articleObj.setBody(jbodyContainer.getString("body"));
 
                 articles.add(articleObj);
             }
